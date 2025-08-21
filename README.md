@@ -1,7 +1,6 @@
 # ReactCourse2025
 React - The Complete Guide 2025 (incl. Next.js, Redux)
 
-<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
