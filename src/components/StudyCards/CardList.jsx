@@ -10,7 +10,7 @@ function CardList() {
       {cards.length > 0 && (
         <ul className={classes.cards}>
           {cards.map((card) => (
-            <Card key={card.id} title={card.title} backText={card.backText} />
+            <Card key={card.id} id={card.id} title={card.title} backText={card.backText} />
            ))
           }
         </ul>

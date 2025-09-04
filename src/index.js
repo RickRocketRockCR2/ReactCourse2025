@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Cards, { loader as cardsLoader } from './routes/Cards'; //cardsLoader set as alias of loader to avoid crashes with other loaders for other routes
 import NewCard, { action as newCardAction } from './routes/NewCard';
+import CardDetails, { loader as cardDetailsLoader } from './routes/CardDetails';
 import About from './routes/About';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'; 
 import RootLayout from './routes/RootLayout';
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
         loader: cardsLoader,
         children: [
           { path: '/create-card', element: <NewCard />, action: newCardAction },
+          { path: '/:id', element: <CardDetails />, loader: cardDetailsLoader },
         ],
       },
       { path: '/about', element: <About /> },

@@ -42,7 +42,7 @@ export async function action({request}){
 
       const newCard = {
         ...postData,
-        id: nextId,
+        id: nextId.toString(),
       };
 
       
