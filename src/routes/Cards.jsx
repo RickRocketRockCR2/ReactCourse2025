@@ -16,7 +16,7 @@ function Cards() {
 export default Cards;
 
 export async function loader() {
-  const response = await fetch('http://localhost:8080/posts');
+  const response = await fetch('https://dummy-backend-cha4dtgmgab3awet.eastus-01.azurewebsites.net/posts');
   const data = await response.json();
   return data.posts;
 }

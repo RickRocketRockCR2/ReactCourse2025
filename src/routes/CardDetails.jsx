@@ -36,7 +36,7 @@ export default CardDetails;
 export async function loader({ params }) {
   const cardId = params.id;
   console.log(cardId);
-  const response = await fetch(`http://localhost:8080/posts/${cardId}`);
+  const response = await fetch(`https://dummy-backend-cha4dtgmgab3awet.eastus-01.azurewebsites.net/posts/${cardId}`);
   if (!response.ok) {
     throw new Response('Could not fetch card details', { status: 500 });
   }

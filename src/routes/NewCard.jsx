@@ -32,7 +32,7 @@ export async function action({request}){
       const postData = Object.fromEntries(formData); // {title: '...', backText: '...'}
       
       // Fetch existing cards to determine the last ID
-      const getResponse = await fetch('http://localhost:8080/posts');
+      const getResponse = await fetch('https://dummy-backend-cha4dtgmgab3awet.eastus-01.azurewebsites.net/posts');
       const existingData = await getResponse.json();
       const existingCards = existingData.posts || [];
 
@@ -46,7 +46,7 @@ export async function action({request}){
       };
 
       
-      await fetch('http://localhost:8080/posts',{
+      await fetch('https://dummy-backend-cha4dtgmgab3awet.eastus-01.azurewebsites.net/posts',{
         method: 'POST',
         body: JSON.stringify(newCard),
         headers: {
