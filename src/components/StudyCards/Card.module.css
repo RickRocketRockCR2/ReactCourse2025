@@ -25,6 +25,11 @@
   margin: 0.25rem 0 0 0;
   color: #322d39;
   font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;       /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes animate-in {
