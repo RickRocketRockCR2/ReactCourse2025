@@ -43,3 +43,14 @@
 .button:hover {
   background-color: #2bb1cc;
 }
+
+.buttonCounterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.buttonCounterContainer .button {
+  max-width: max-content;
+}

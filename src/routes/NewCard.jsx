@@ -1,8 +1,22 @@
 import classes from './NewCard.module.css';
 import Modal from '../components/StudyCards/Modal';
 import { Link, Form, redirect } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 
 const NewCard = () => {
+  const dispatch = useDispatch();
+  const hasDispatched = useRef(false); // Unlike useState, updating useRef does not trigger a re-render. '.current' value persists across renders, making it perfect for tracking things
+
+  // persistent flag to prevent the Redux dispatch from running more than once, 
+  // even if React re-renders the component multiple times (like it does in development with Strict Mode). 
+  // Simple solution is removing <React.StrictMode> in index.js.
+  useEffect(() => {
+    if (!hasDispatched.current) {
+      dispatch({ type: 'increment' }); // Dispatch only once on mount
+      hasDispatched.current = true;
+    }
+  }, [dispatch]);
 
   return (
     <Modal>
@@ -42,7 +56,7 @@ export async function action({request}){
 
       const newCard = {
         ...postData,
-        id: nextId.toString(),
+        id: nextId,
       };
 
       
