@@ -13,7 +13,7 @@ const NewCard = () => {
   // Simple solution is removing <React.StrictMode> in index.js.
   useEffect(() => {
     if (!hasDispatched.current) {
-      dispatch({ type: 'increment' }); // Dispatch only once on mount
+      dispatch({ type: 'attempts' }); // Dispatch only once on mount
       hasDispatched.current = true;
     }
   }, [dispatch]);

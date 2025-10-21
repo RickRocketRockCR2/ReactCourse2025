@@ -5,6 +5,7 @@ import Cards, { loader as cardsLoader } from './routes/Cards'; //cardsLoader set
 import NewCard, { action as newCardAction } from './routes/NewCard';
 import CardDetails, { loader as cardDetailsLoader } from './routes/CardDetails';
 import About from './routes/About';
+import Message from './routes/Message';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'; 
 import RootLayout from './routes/RootLayout';
 import { Provider } from 'react-redux'; //It imports the store at the highest level of the application
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
         loader: cardsLoader,
         children: [
           { path: '/create-card', element: <NewCard />, action: newCardAction },
+          { path: '/counter1', element: <Message /> },
+          { path: '/counter2', element: <Message /> },
           { path: '/:id', element: <CardDetails />, loader: cardDetailsLoader },
         ],
       },

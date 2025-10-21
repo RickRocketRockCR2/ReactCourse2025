@@ -7,6 +7,7 @@ import classes from './MainHeader.module.css';
 function MainHeader() {
 
   const counter = useSelector((state) => state.count); // Extracting the count value from the Redux store state 
+  const attempts = useSelector((state) => state.attempts);
 
   return (
     <header className={classes.header}>
@@ -21,7 +22,8 @@ function MainHeader() {
           <MdPostAdd size={18} />
           Add New Card
         </Link>
-        <span>Add New Card attempts: {counter}</span>
+        <span>Add New Card Attempts: {attempts}</span>
+        <span>Global Counter: {counter}</span>
       </div>
     </header>
   );

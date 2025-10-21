@@ -2,12 +2,12 @@
 import { createStore } from 'redux';
 
 //Reducer
-const counterReducer = (state = { count: 0 }, action) => {
+const counterReducer = (state = { count: 0, attempts: 0, added: 0 }, action) => {
   switch (action.type) {
-    case 'increment':
-      return { count: state.count + 1 };
-    case 'decrement':
-      return { count: state.count - 1 };
+    case 'attempts':
+      return { ...state, attempts: state.attempts + 1 }; // Spread the existing state by setting "...state," keeps the existing state properties unchanged (count and attempts). 
+    case 'incrementCustom':
+      return { ...state, count: state.count + action.amount, added: action.amount }; // Spread the existing state by setting "...state," keeps the existing state properties unchanged (count and attempts).
     default:
       return state;
   }

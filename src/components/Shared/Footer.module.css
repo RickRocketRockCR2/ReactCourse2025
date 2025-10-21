@@ -27,7 +27,7 @@
 }
 
 .footer-social {
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .footer-copy {
@@ -36,3 +36,32 @@
   color: #aaa;
 }
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #57c4db;
+  color: #2a2630;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #2bb1cc;
+}
+
+.buttonCounterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.buttonCounterContainer .button {
+  max-width: max-content;
+}
