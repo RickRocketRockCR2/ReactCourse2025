@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 function Message() {
-const counterAdded = useSelector((state) => state.added);
+const counterAdded = useSelector((state) => state.counter.added);
 const dispatch = useDispatch();
 const hasDispatched = useRef(false);
 const location = useLocation();
