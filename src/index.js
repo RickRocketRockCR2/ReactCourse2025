@@ -9,7 +9,7 @@ import Message from './routes/Message';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'; 
 import RootLayout from './routes/RootLayout';
 import { Provider } from 'react-redux'; //It imports the store at the highest level of the application
-import store from './store'; // This defines the store the app would use (can be many)
+import store from './store/store'; // This defines the store the app would use (can be many slices combined into one store).
 
 // router: Object with route configuration (route definition) that defines the path and element (component should be rendered when the path is active).
 // createBrowserRouter: Function that creates the router

@@ -3,6 +3,7 @@ import Modal from '../components/StudyCards/Modal';
 import { Link, Form, redirect } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { counterActions } from '../store/counterSlice';
 
 const NewCard = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const NewCard = () => {
   // Simple solution is removing <React.StrictMode> in index.js.
   useEffect(() => {
     if (!hasDispatched.current) {
-      dispatch({ type: 'attempts' }); // Dispatch only once on mount
+      dispatch(counterActions.incrementAttempts()); // Dispatch only once on mount
       hasDispatched.current = true;
     }
   }, [dispatch]);

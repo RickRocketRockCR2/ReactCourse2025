@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { MdPostAdd, MdMessage } from 'react-icons/md';
 import { useSelector, useDispatch } from 'react-redux';
 import HamburgerMenu from './HamburgerMenu';
+import { CLOSE_MENU } from '../../store/menuSlice';
 
 import classes from './MainHeader.module.css';
 
@@ -11,10 +12,6 @@ function MainHeader() {
   const attempts = useSelector((state) => state.counter.attempts);
   const isMenuOpen = useSelector(state => state.menu.isMenuOpen);
   const dispatch = useDispatch();
-
-  const toggleMenu = () => {
-    dispatch({ type: 'TOGGLE_MENU' });
-  };
 
   return (
     <header className={classes.header}>
@@ -36,8 +33,8 @@ function MainHeader() {
         <HamburgerMenu />
       {isMenuOpen && (
         <nav className={classes.hamburguerNav}>
-          <Link to="/" onClick={() => dispatch({ type: 'CLOSE_MENU' })}>Home</Link>
-          <Link to="/about" onClick={() => dispatch({ type: 'CLOSE_MENU' })}>About</Link>
+          <Link to="/" onClick={() => dispatch(CLOSE_MENU())}>Home</Link>
+          <Link to="/about" onClick={() => dispatch(CLOSE_MENU())}>About</Link>
         </nav>
       )}        
       </div> 
