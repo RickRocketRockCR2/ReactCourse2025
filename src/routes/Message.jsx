@@ -21,7 +21,7 @@ useEffect(() => {
     }
     hasDispatched.current = true;
   }
-}, [dispatch]);
+}, [dispatch, location.pathname]);
 
   return (
     <Modal>
